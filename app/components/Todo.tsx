@@ -19,7 +19,7 @@ const Todo = ({ todo }: TodoProps) => {
   const handleEdit = async () => {
     setEdit(!edit);
     if (edit) {
-        const response =  await fetch(`${API_URL}editTodo/${todo.id}`, {
+        const response =  await fetch(`${API_URL}/editTodo/${todo.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -39,7 +39,7 @@ const Todo = ({ todo }: TodoProps) => {
   }
 
   const handleDelete = async () => {
-    const response = await fetch(`${API_URL}deleteTodo/${todo.id}`, {
+    const response = await fetch(`${API_URL}/deleteTodo/${todo.id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const Todo = ({ todo }: TodoProps) => {
   }
 
   const togleTodoCompletion = async (id: number, isCompleted: boolean) => {
-    const response =  await fetch(`${API_URL}editTodo/${todo.id}`, {
+    const response =  await fetch(`${API_URL}/editTodo/${todo.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
